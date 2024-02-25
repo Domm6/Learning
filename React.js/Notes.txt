@@ -1,0 +1,12 @@
+- runs in web browser
+- single html page and route it
+- very fast
+- used in combination to create a full stack application
+    - MERN
+- comparable with Angulare and Vue
+
+Use case
+- strucutre veiw layer of application
+- use resusable components
+- uses jsx javascript extended language
+- the uses of virtual dom allows not to have to reload page
