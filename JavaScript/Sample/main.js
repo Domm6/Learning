@@ -1,35 +1,28 @@
-console.log(window); // window is the parent most objet
+const myForm = document.querySelector('#my-form');
+const nameInput = document.querySelector('#name');
+const emailInput = document.querySelector('#email');
+const msg = document.querySelector('.msg');
+const userList = document.querySelector('#users');
 
+myForm.addEventListener('submit', onSubmit);
 
+function onSubmit(e) {
+    e.preventDefault();
 
-// Single element select
-const form = console.log(document.getElementById('my-form'));
-const query = console.log(document.querySelector('h1'));
+    if(nameInput.value === '' || emailInput === '') {
+        //alert('Please enter fields');
+        msg.classList.add('error'); //  makes background red
+        msg.innerHTML = 'Please entere all fields';
 
+        setTimeout(() => msg.remove(), 3000); // removes error message after 3 seconds
+    } else{
+        console.log('success');
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(`${nameInput.value} : ${emailInput.value}`)); // create list element
 
-// multiple element select
-console.log(document.querySelectorAll('.item')); // very similar to an array
-console.log(document.getElementsByClassName('item')); // gives collection (can't use array methods on) (woudln't use)
-console.log(document.getElementsByTagName('li')); // gives collection (can't use array methods on) (woudln't use)
+        userList.appendChild(li); // add li to the list
 
-
-const items = document.querySelectorAll('.item');
-items.forEach((item) => console.log(item));
-
-// changing things in DOM (DOM means user interface)
-const ul = document.querySelector('.items');
-
-//ul.remove();
-// ul.lastElementChild.remove();
-ul.firstElementChild.textContent = 'Hello';
-ul.children[1].innerText = 'Brad';
-ul.lastElementChild.innerHTML = "<h1>Hello<h1>"; // adding HTML dynamically
-
-const btn = document.querySelector('.btn');
-// btn.style.background = 'red'; // changes color to red
-
-
-//////////////////////// Events ////////////////
-btn.addEventListener('click', (e) => {
-    console.log('click');
-});
+        nameInput.value = '';
+        emailInput.value = '';
+    }
+}
