@@ -197,3 +197,70 @@ function addNums(num1 = 1, num2 = 1) {
 
 console.log(addNums());
 console.log(addNums(5,8));
+
+//////////////////// arrow function ////////////////////////
+
+const addNums2 = (num1 = 1, num2= 2) => {
+    console.log(num1 + num2);
+}
+
+addNums2(5,6)
+
+const addNums3 = (num1 =1, num2 = 2) => num1 + num2;
+console.log(addNums3(5,5))
+
+todos.forEach((todo) => console.log(todo))
+
+
+//////////////////// Object Oriented Programming /////////////////
+
+// constructor function pre classes
+    // function Person(firstName, lastName, dob) {
+    //     this.firstName = firstName;
+    //     this.lastName = lastName;
+    //     this.dob = new Date(dob); // creates an actual date object that has methods
+    // }
+
+    // Person.prototype.getbBirthYear = function(){
+    //     return this.dob.getFullYear();
+
+    // }
+
+    // Person.prototype.getFullName = function() {
+    //     return `${this.firstName} ${this.lastName}`;
+    // }
+
+
+// Class
+class Person {
+    constructor(firstName, lastName, dob) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dob = new Date(dob); // creates an actual date object that has methods
+    }
+
+    getbBirthYear() {
+        return this.dob.getFullYear();
+    }
+    getFullName() {
+        return `${this.firstName} ${this.lastName}`;
+
+    }
+}
+
+//Instantiate object
+const person1 = new Person('Dominic', 'Parker', "11/04/2003");
+const person2 = new Person('Devan', 'Parker', "11/12/2006");
+
+
+console.log(person1);
+console.log(person2.firstName);
+console.log(person2.dob.getTime())
+
+console.log(person1.getbBirthYear());
+console.log(person1.getFullName());
+
+console.log(person1);
+
+///////////////////// The DOM /////////////////////////
+
