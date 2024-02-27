@@ -22,7 +22,7 @@ function onSubmit(e) {
 
         userList.appendChild(li); // add li to the list
 
-        nameInput.value = '';
+        nameInput.value = ''; // set input value to empty
         emailInput.value = '';
     }
 }
